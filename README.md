@@ -2,7 +2,7 @@
 
 This is a MyEAN stack app which uses fabric.js
 
-![Screencapture GIF](https://i.imgur.com/AV84YDj.gif)
+Screencast https://i.imgur.com/AV84YDj.gif
 
 Images and Text can be uploaded scaled, rotated. The canvas can also be downloaded as .png image file.
 
