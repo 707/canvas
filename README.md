@@ -1,1 +1,22 @@
 # canvas
+
+This is a MyEAN stack app which uses fabric.js
+
+![Screencapture GIF](https://i.imgur.com/AV84YDj.gif)
+
+Images and Text can be uploaded scaled, rotated. The canvas can also be downloaded as .png image file.
+
+Edit history works by tracking user click events within the canvas and collating canvas data for fast loading. 
+
+A MySQl 5.0+ db is requried to run the app.
+
+Use this query to create a table in your database and use your  credentials to access it.
+
+````
+CREATE TABLE `saved` (
+  `id` varchar(255) NOT NULL DEFAULT '',
+  `data` json DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+````
+
