@@ -136,7 +136,7 @@
 
             <div class="col-md-2 list-group-history">
 
-                <div ng-repeat="n in history_data | orderBy:'-' track by $index">
+                <div ng-repeat="n in history_data  track by $index">
                     <button class="btn btn-default btn-primary list-group-item  btn-block btn-border box-shadow" ng-click="LoadData(n)">
                         <center>Edit {{$index+1}}</center>
                     </button>

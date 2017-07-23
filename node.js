@@ -39,6 +39,7 @@ app.get('/api/saved', function(req, res) {
 });
 
 app.post('/api/saved', function(req, res) {
+    //preparing the query data
     console.log(req.body);
     var request = req.body;
     var id, data;
@@ -73,8 +74,5 @@ app.get('*', function(req, res) {
 
 app.listen(3000);
 console.log("App listening on port 3000");
+console.log("Running in :"  + process.env.NODE_ENV);
 
-
-//root@localhost: lAchk>BfV3by
-
-//    E5s_4;*be_v-

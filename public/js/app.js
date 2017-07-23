@@ -5,7 +5,7 @@ app.controller('MainController', function($scope, $http, $timeout, Downloader) {
     var unique_value;
 
     //canvas init
-    var canvas = new fabric.Canvas('c');
+    var canvas = new fabric.Canvas('c',{backgroundColor : "#fff"});
     canvas.setDimensions({
         width: 700,
         height: 500
@@ -19,6 +19,7 @@ app.controller('MainController', function($scope, $http, $timeout, Downloader) {
 
     });
     canvas.add(Initial_Text);
+
 
 
     //File Upload
