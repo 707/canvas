@@ -12,7 +12,7 @@ A MySQl 5.0+ db is requried to run the app.
 
 Use this query to create a table in a database called 'fp' and use your credentials to access it. You can edit 
 
-[the variable 'connection'](node.js) if you'd like to.
+[the variable 'connection'](node.js) if you'd like to edit the credentials.
 
 ````
 CREATE TABLE `saved` (
