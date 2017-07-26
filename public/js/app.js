@@ -68,15 +68,14 @@ app.controller('MainController', function($scope, $http, $timeout, Downloader) {
     //Edit tracking
     $scope.History = function() {
 
-        console.log("history is running");
+        console.log("Canvas is now being tracked");
 
         canvas.on('object:modified', function() {
-            console.log("inside");
 
             var sequence = [];
             sequence.push(canvas.toJSON());
             unique_value = sequence;
-            console.log(unique_value);
+            // console.log(unique_value);
         });
         history_array.push(unique_value[unique_value.length - 1]);
         $scope.history_data = history_array;
@@ -92,7 +91,7 @@ app.controller('MainController', function($scope, $http, $timeout, Downloader) {
             url: "/api/saved"
         }).then(function mySuccess(response) {
             $scope.updated_data = response.data;
-            console.log("\n\n RAN UPDATE")
+            console.log("Upadated Database")
         }, function myError(response) {
             $scope.updated_data = response.statusText;
         });
@@ -108,18 +107,16 @@ app.controller('MainController', function($scope, $http, $timeout, Downloader) {
             id: $scope.name,
             data: ""
         }];
-        var json = canvas.toJSON();
-        console.log(json);
-        json = JSON.stringify(json);
-        // console.log("Stringified json \n " + json)
-        template[0]['data'] = json;
 
-        // console.log(a);
+        var json = canvas.toJSON();
+        json = JSON.stringify(json);
+
+        template[0]['data'] = json;
 
         $http.post('/api/saved', template).then(function(response) {
             if (response.data)
                 $scope.msg = "Post Data Submitted Successfully!";
-            console.log("angular success post")
+            console.log("Canvas saved to Db successfully.");
             setInterval($scope.UpdateData(), 1000);
 
         }, function(response) {
@@ -135,7 +132,7 @@ app.controller('MainController', function($scope, $http, $timeout, Downloader) {
     //Render canvas from json data
     $scope.LoadData = function(json) {
 
-        console.log(json);
+        // console.log(json);
         canvas.loadFromJSON(json, function() {
             canvas.renderAll();
             console.log("Canvas rendered")
@@ -144,7 +141,7 @@ app.controller('MainController', function($scope, $http, $timeout, Downloader) {
         });
     }
 
-    //Download image using service
+    //Download image using a service
     $scope.Download_Image = function() {
         Downloader.downloader(canvas, 'canvas');
     }

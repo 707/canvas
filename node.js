@@ -40,7 +40,7 @@ app.get('/api/saved', function(req, res) {
 
 app.post('/api/saved', function(req, res) {
     //preparing the query data
-    console.log(req.body);
+    // console.log(req.body);
     var request = req.body;
     var id, data;
     var query_data = [];
@@ -50,7 +50,7 @@ app.post('/api/saved', function(req, res) {
         data = request[i]['data'];
         query_data.push([id, data]);
     }
-    console.log(data);
+    // console.log(data);
     var myquery = 'insert into saved (id,data) values ?';
 
     connection.query(myquery, [query_data], function(err) {
@@ -59,7 +59,7 @@ app.post('/api/saved', function(req, res) {
             console.log(err)
         } else {
             res.send('Success');
-            console.log("success \n");
+            console.log("Successfully saved.");
             console.log(query_data);
 
         }
